@@ -7,6 +7,7 @@ import {
     MatSelectModule, MatInputModule,
 } from '@angular/material';
 import { TitleBarComponent } from './component/title-bar/title-bar.component';
+import { NonnegativeNumberFieldComponent } from './component/nonnegative-number-field/nonnegative-number-field.component';
 
 
 const MODULES = [
@@ -19,7 +20,8 @@ const MD_MODULES = [
 ];
 
 const COMPONENTS = [
-  TitleBarComponent
+  TitleBarComponent,
+  NonnegativeNumberFieldComponent,
 ];
 
 
