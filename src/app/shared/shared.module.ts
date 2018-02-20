@@ -6,6 +6,7 @@ import {
     MatToolbarModule, MatButtonModule, MatIconModule, MatRadioModule,
     MatSelectModule, MatInputModule,
 } from '@angular/material';
+import { TitleBarComponent } from './component/title-bar/title-bar.component';
 
 
 const MODULES = [
@@ -17,7 +18,9 @@ const MD_MODULES = [
   MatSelectModule, MatInputModule,
 ];
 
-const COMPONENTS = [];
+const COMPONENTS = [
+  TitleBarComponent
+];
 
 
 @NgModule({
