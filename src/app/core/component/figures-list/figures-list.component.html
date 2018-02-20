@@ -1,0 +1,42 @@
+<cf-title-bar>
+  Figure and operation selection
+</cf-title-bar>
+
+<section>
+  <p>Please select operation and figure.</p>
+
+  <form (ngSubmit)="onSubmit()">
+    <h5>Operation</h5>
+    <mat-radio-group 
+      [(ngModel)]="selectedOperation"
+      name="operation"
+      >
+      <mat-radio-button *ngFor="let operation of operations" 
+        [value]="operation">
+          {{ operation }}
+      </mat-radio-button>
+    </mat-radio-group>
+  
+    <h5>Figure</h5>
+    <mat-form-field>
+      <mat-select 
+      [(value)]="selectedFigure"
+      placeholder="Select figure...">
+        <mat-option *ngFor="let figure of figures"
+          [value]="figure">
+            {{ figure }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <button
+      [disabled]="!selectedOperation || !selectedFigure"
+      mat-raised-button
+      color="accent"
+      type="submit"
+    >
+      CONTINUE
+    </button>
+  </form>
+
+</section>
