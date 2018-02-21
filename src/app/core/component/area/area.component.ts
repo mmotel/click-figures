@@ -5,6 +5,7 @@ import { Circle } from './../../model/circle';
 import { Square } from '../../model';
 import { Triangle } from './../../model';
 import { IFigure } from '../../model/figure';
+import { ModelFactoryService } from '../../service/model-factory.service';
 
 
 @Component({
@@ -23,13 +24,7 @@ export class AreaComponent implements OnInit {
   ngOnInit () {
     this.figure = this._activatedRoute.snapshot.params['figure'];
 
-    const modelsFactory = {
-      'circle': Circle,
-      'square': Square,
-      'triangle': Triangle
-    };
-
-    this.model = new modelsFactory[this.figure]();
+    this.model = ModelFactoryService.getFigureModel(this.figure);
   }
 
 }

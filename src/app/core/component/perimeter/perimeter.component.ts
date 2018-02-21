@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { IFigure } from '../../model/figure';
 import { Circle, Triangle, Square } from '../../model';
+import { ModelFactoryService } from './../../service/model-factory.service';
 
 
 @Component({
@@ -22,13 +23,7 @@ export class PerimeterComponent implements OnInit {
   ngOnInit () {
     this.figure = this._activatedRoute.snapshot.params['figure'];
 
-    const modelsFactory = {
-      'circle': Circle,
-      'square': Square,
-      'triangle': Triangle
-    };
-
-    this.model = new modelsFactory[this.figure]();
+    this.model = ModelFactoryService.getFigureModel(this.figure);
   }
 
 }
