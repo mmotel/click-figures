@@ -1,3 +1,14 @@
-<p>
-  perimeter works!
-</p>
+<cf-title-bar [backUrl]="'/list'">
+  Perimeter: {{ figure }}
+</cf-title-bar>
+
+<section>
+  <cf-figures-form
+    [figure]="figure"
+    [model]="model"
+  ></cf-figures-form>
+
+  <h4>
+    Perimeter: {{ model?.perimeter() }}
+  </h4>
+</section>
