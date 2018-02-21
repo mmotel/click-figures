@@ -1,3 +1,14 @@
-<p>
-  area works!
-</p>
+<cf-title-bar [backUrl]="'/list'">
+  Area: {{ figure }}
+</cf-title-bar>
+
+<section>
+  <cf-figures-form
+    [figure]="figure"
+    [model]="model"
+  ></cf-figures-form>
+
+  <h4>
+    Area: {{ model?.area() }}
+  </h4>
+</section>
